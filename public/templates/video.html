@@ -1,0 +1,11 @@
+<pagination num-pages="pagination.noOfPages" current-page="pagination.currentPage" class="pagination-small" previous-text="&laquo;"
+            next-text="&raquo;"></pagination>
+<div class="row">
+    <ul class="thumbnails">
+        <li class="span2" ng-repeat="row in dataStorage.rows">
+            <a href="javascript:void(0)" title="{{row.title}}" class="thumbnail" ng-click="view(row)">
+                <img ng-src="{{row.thumbnail}}" alt=""/>
+            </a>
+        </li>
+    </ul>
+</div>
