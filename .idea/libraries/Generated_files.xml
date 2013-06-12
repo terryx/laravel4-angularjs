@@ -3,14 +3,20 @@
     <properties>
       <sourceFilesUrls>
         <item url="file://$PROJECT_DIR$/public/js/api.min.js" />
+        <item url="file://$PROJECT_DIR$/public/js/controller/video.min.js" />
         <item url="file://$PROJECT_DIR$/public/js/service.min.js" />
+        <item url="file://$PROJECT_DIR$/public/js/admin.min.js" />
         <item url="file://$PROJECT_DIR$/public/js/app.min.js" />
+        <item url="file://$PROJECT_DIR$/public/js/video.min.js" />
       </sourceFilesUrls>
     </properties>
     <CLASSES>
       <root url="file://$PROJECT_DIR$/public/js/api.min.js" />
       <root url="file://$PROJECT_DIR$/public/js/service.min.js" />
+      <root url="file://$PROJECT_DIR$/public/js/controller/video.min.js" />
+      <root url="file://$PROJECT_DIR$/public/js/admin.min.js" />
       <root url="file://$PROJECT_DIR$/public/js/app.min.js" />
+      <root url="file://$PROJECT_DIR$/public/js/video.min.js" />
     </CLASSES>
     <SOURCES />
   </library>

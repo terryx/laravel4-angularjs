@@ -1,1 +1,18 @@
-asd
+<div class="span4"></div>
+<div class="span4">
+    <div class="alert alert-danger" data-ng-show="error !== ''">
+        <button type="button" class="close" ng-click="error = ''">&times;</button>
+       {{error}}
+    </div>
+    <form method="POST" data-ng-submit="loginAttempt(user)">
+        <label for="email">Email</label>
+        <input id="email" type="text" name="email" data-ng-model="user.email">
+        <label for="password">Password</label>
+        <input id="password" type="password" name="password" data-ng-model="user.password">
+
+        <div class="controls">
+            <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+    </form>
+</div>
+<div class="span4"></div>

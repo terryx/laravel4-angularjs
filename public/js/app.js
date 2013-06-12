@@ -15,6 +15,10 @@ app.config(['$routeProvider', '$locationProvider',
             .when('/video/id/:id', {
                 templateUrl: 'templates/single-video.html',
                 controller: 'SingleVideoController'
+            })
+            .when('/login', {
+                templateUrl: 'templates/login.html',
+                controller: 'LoginController'
             });
 
         $locationProvider.html5Mode(true);
@@ -128,7 +132,33 @@ app.controller('VideoController', ['$scope', 'VideoApi', '$q', 'pagination', '$r
 
     }]);
 
-app.controller('SingleVideoController', ['$scope', '$location', function($scope, $location){
+app.controller('SingleVideoController', ['$scope', '$location', function ($scope, $location) {
     var searchPath = $location.$$path.split('/');
     $scope.youtube_id = searchPath[3];
+}]);
+
+app.controller('LoginController', ['$scope', 'AuthApi', '$location',
+    function ($scope, AuthApi, $location) {
+
+    $scope.user = {};
+    $scope.error = '';
+
+    $scope.loginAttempt = function (input) {
+
+        AuthApi.Auth(input).save(function (data) {
+
+            if (!data) {
+                return;
+            }
+
+            if (data.status === 200) {
+                window.location = '/admin';
+            }
+
+            if (data.status === 400) {
+                $scope.error = data.message;
+            }
+
+        });
+    }
 }]);

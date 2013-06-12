@@ -26,25 +26,22 @@
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <ul class="nav">
-            <li><a data-ng-href="/login"><i class="icon-user"></i></a></li>
+            <li><a data-ng-href="/logout"><i class="icon-off icon-white"></i></a></li>
         </ul>
         <div class="container">
-            <a class="brand" href="/">Main</a>
+            <a class="brand" href="/admin">Control</a>
             <ul class="nav">
                 <li class="divider-vertical"></li>
-            </ul>
-            <ul class="nav pull-right">
-                <li>
-                    <form class="navbar-search form-search pull-right" ng-submit="search(query)"
-                          ng-controller="SearchController">
-                        <div class="input-append">
-                            <input type="text" ng-model="query" class="search-query"
-                                   placeholder="Search for youtube video..."/>
-                            <button type="submit" class="btn"><span class="icon icon-search"></span></button>
-                        </div>
-                    </form>
+                <li class="dropdown">
+                    <a href="#" id="videoLink" role="button" class="dropdown-toggle" data-toggle="dropdown">Video <b
+                            class="caret"></b></a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="videoLink">
+                        <li><a role="menuitem" tabindex="-1" data-ng-href="/protected/video/feeds">Feeds</a></li>
+                        <li><a role="menuitem" tabindex="-1" data-ng-href="/protected/video/add">Add</a></li>
+                    </ul>
                 </li>
             </ul>
+
         </div>
     </div>
 </div>
@@ -55,6 +52,7 @@
 
 <script src="/js/api.min.js"></script>
 <script src="/js/service.min.js"></script>
-<script src="/js/app.min.js"></script>
+<script src="/js/controller/video.min.js"></script>
+<script src="/js/admin.min.js"></script>
 </body>
 </html>

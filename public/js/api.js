@@ -19,8 +19,15 @@ angular.module('Api', ['ngResource'])
             Search: function (data) {
                 return $resource('/video/search/:query', data);
             },
-            Count: function(data){
+            Count: function (data) {
                 return $resource('/video/count/:query', data);
             }
         }
     }])
+    .factory('AuthApi', ['$resource', function ($resource) {
+        return {
+            Auth: function(data){
+                return $resource('/auth/login', data)
+            }
+        }
+    }]);

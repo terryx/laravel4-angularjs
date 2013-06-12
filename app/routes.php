@@ -31,6 +31,7 @@ Route::get('/video/id/{id}', function ($url) {
     return View::make('index');
 });
 
+
 //Route::get('/{url}', function ($url) {
 //print_r($url); exit;
 //    $links = array('login', 'video', 'video/{id}');
@@ -45,5 +46,6 @@ Route::get('/video/id/{id}', function ($url) {
 ////    return View::make('error.404');
 //});
 
-
+Route::controller("auth", "AuthController");
 Route::controller("video", "VideoController");
+Route::controller("admin", "AdminController");
